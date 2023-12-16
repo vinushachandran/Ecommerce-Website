@@ -1,0 +1,62 @@
+.con{
+	justify-content: center;
+	align-items: center;
+	padding: 0 150px 0 150px;
+}
+.co1{
+  	padding: 20px;
+  	min-width: 300px;  	
+}
+
+.title{
+	margin-bottom: 10;
+    text-align: center;
+}
+
+.inputbox{
+	flex-basis: 45%;
+	
+}
+input{
+	width: 100%;
+	border: 1px solid #ccc;
+	outline: none;
+	padding: 20px;
+    margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+textarea{
+	width:100%;
+	border: 1px solid #ccc;
+	outline: none;
+	padding: 20px;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+    margin-bottom: 6px;
+}
+
+
+ion-icon{
+	color: black;
+}
+
+.submit{
+	display: inline-block;
+	color: #111;
+	font-size: 16px;
+	font-weight: 500;
+	text-transform: capitalize;
+	border: 2px solid #111;
+	padding: 12px 25px;
+	transition: all .42s ease ;
+    width: 100%;
+}
+
+.submit:hover{
+	color: white;
+	background-color: black;
+}

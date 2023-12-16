@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-UA-Compatible" content="IE-edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tiny Treasures</title>
+	<link rel="stylesheet" th:href="@{/css/admin.css}"/>
+    <link rel="stylesheet"  th:href="@{/css/common.css}"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <script src="java.js"></script>
+	 
+	<header class="stickey">
+		<a th:href ="@{/#}" class="logo"><img src="image/logo.png" alt="" ></a>
+
+		<ul class="navmenu">
+			<li><a th:href="@{/home}">Tiny Treasures</a></li>
+			<li><a th:href="@{/admin}">Home</a></li>
+			<li><a th:href="@{/#}">Logout</a></li>
+			
+		</ul>
+    </header>
+
+        <section class="main-home">
+            <div class="main-text">
+                <h1>Glad to have you back! Admin</h1>
+                <p>manage your data effortlessly</p>
+            </div>
+    
+        </section>
+
+        <section class="actions">
+            <div class="body">
+                <div class="small-container">
+                    <div class="row" >
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>Categories</h2>
+                                <p class="card-text">Consolidate and Update Categories</p>
+                                <a th:href="@{/admin/categories}"class="main-btn">Manage</a>
+            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="card-title">Products</h4>
+                                <p class="card-text">Consolidate and Update Products</p>
+                                <a th:href="@{/admin/products}" class="main-btn">Manage</a>
+            
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+
+        </section>
+		
+	
+    </body>
+    </html>

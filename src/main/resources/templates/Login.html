@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>   
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-UA-Compatible" content="IE-edge">
+	<title>Tiny Treasures</title>
+    <link rel="stylesheet"  th:href="@{/css/login_style.css}">
+    <link rel="stylesheet" th:href="@{/css/common.css}" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <header class="stickey">
+		<a th:href ="@{/#}" class="logo"><img src="image/logo.png" alt="" ></a>
+
+		<ul class="navmenu">
+			<li><a th:href="@{/home}">Home</a></li>
+			<li><a th:href="@{/about}">About Us</a></li>
+			<li><a th:href="@{/shop}">Products</a></li>
+			<li><a th:href="@{/contact}">Contact</a></li>
+			<li><a th:href="@{/admin}">Admin</a></li>
+			<li><a th:href="@{/logout}">Logout</a></li>
+		</ul>
+
+		<div class="navicon">
+			<a th:href="@{/#}"><i class='bx bx-search-alt-2'></i></a>
+			<a th:href="@{/login}"><i class='bx bxs-user'></i></a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+		
+	</header>
+    <section class="main-home">
+    <div class="wrapper">
+         <form th:action="@{/login}" method="post" role="form" th:object="${loginRequest}">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input th:field="*{name}" type="text" name="name" placeholder="Username "  required>
+                <i class='bx bxs-user' ></i>
+            </div>
+            <div class="input-box">
+                <input th:field="*{password}" type="password" id="password" name="password" placeholder="password" required>
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember me</label>
+                <a th:href="@{/#}">Forgot password</a>
+            </div>
+            <button type="submit" class="btn" name="login-submit" id="login">Login</button>
+
+            <div class="register-link">
+                <p>Don't have an account?<a th:href="@{/signup}"> Register</a></p>
+            </div>
+         </form>
+    </div>
+</section>
+
+<section class="contact">
+    <div class="contact-info">
+        <div class="first-info">
+            <img src="images/logo.png" alt="">
+            <p>No 35 Lotus Street,<br>Sri Lanka</p>
+            <p>00944535321</p>
+            <p>tinytreasures@gmail.com</p>
+
+            <div class="social-icon">
+                <a th:href="@{/#}"><i class='bx bxl-facebook'></i></a>
+                <a th:href="@{/#}"><i class='bx bxl-twitter'></i></a>
+                <a th:href="@{/#}"><i class='bx bxl-instagram'></i></a>
+                <a th:href="@{/#}"><i class='bx bxl-youtube' ></i></a>
+                <a th:href="@{/#}"><i class='bx bxl-linkedin' ></i></a>
+                
+            </div>
+        </div>
+        <div class="second-info">
+            <h4>Support</h4>
+            <p>Contact us</p>
+            <p>About page</p>
+            <p>Size Guide</p>
+            <p>Shopping & Returns</p>
+            <p>Privacy</p>
+        </div>
+        <div class="third-info">
+            <h4>Shop</h4>
+            <p>Baby Girl's Shopping</p>
+            <p>Baby Boy's Shopping</p>
+            <p>Baby's Toys</p>
+            <p>Baby Caring Products </p>
+            <p>Discount</p>
+        </div>
+
+        <div class="forth info">
+            <h4>Company</h4>
+            <p>About</p>
+            <p>BLog</p>
+            <p>Affiliate</p>
+            <p>Login</p>
+        </div>
+
+        <div class="five">
+            <h4>Subscribe</h4>
+            <p>Receive Updates, Hot Deals, Discount Sent Straight In Your Inbox Daily</p>
+            <p></p>
+        </div>
+    </div>
+</section>
+
+<div class="end-text">
+    <p>copyright <i class='bx bx-copyright' ></i> @2023.All Rights Reserved.</p>
+</div>
+
+<script src="java.js"></script>
+
+</body>
+</html>

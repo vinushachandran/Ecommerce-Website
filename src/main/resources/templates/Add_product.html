@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-UA-Compatible" content="IE-edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tiny Treasures</title>
+	<link rel="stylesheet" th:href="@{/css/Add_product.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <script src="java.js"></script>
+	 
+	<header class="stickey">
+		<a th:href ="@{/#}" class="logo"><img src="image/logo.png" alt="" ></a>
+		<ul class="navmenu">
+			<li><a th:href="@{/home}">Tiny Treasures</a></li>
+			<li><a th:href="@{/admin}">Home</a></li>
+			<li><a th:href="@{/#}">Logout</a></li>
+			
+		</ul>
+    </header>
+
+    <section>
+        <div class="wrapper">
+            <form th:action="@{/admin/products/add}" method="post" th:object="${productDTO}" enctype="multipart/form-data">
+					<h1> Add Product </h1>
+					<input type="hidden" name="id"  th:field="*{id}">
+		            <div class="tab">
+		            	<div class="inputbox">
+		            		<p>Product Name</p> 
+							<input type="text" th:field="*{name}" name="name" id="name" required />
+							
+						</div>
+						<div class="inputbox">
+							<p>Select Category</p>
+							<select class="form-control" th:field="*{categoryId}" id="category" name="category">
+                        		<option th:each="category :${categories}"
+                                th:value="${category.id}"
+                                th:text="${category.name}">
+                    		</select>
+						</div>
+						<div class="inputbox">
+							<p>Price</p>
+                    		<input type="number" class="form-control" required th:field="*{price}" min="0" name="price" id="price"> 
+						</div>
+						<div class="inputbox">
+							<p>Quantity</p>
+                    		<input type="number" class="form-control" required th:field="*{qty}" name="qty" id="qty"> 
+						</div>
+						<br>
+						<div class="inputboxa">
+							<p>Product Image</p>
+							<div class="custom-file">
+			                	<input type="file"  class="custom-file-input" name="productImage" accept="image/jpeg, image/png"  id="productImage"/>
+			              	</div>
+			              	<img src="#" id="imgPreview" height="100px" width="100px" th:src="@{${'/productImages/' + productDTO.imageName}}" style="margin-top: 20px" alt=" ">
+			               	<input type="hidden" name="imgName" th:value="${productDTO.imageName}">
+						</div>
+		            </div>
+					<button type="submit" class="btn">Submit</button>
+				</form>
+       </div>
+    </section>
+
+
+    </body>
+    </html> 
